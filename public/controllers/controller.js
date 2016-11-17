@@ -16,7 +16,14 @@ var refresh=function(){
 			refresh();
 		});
 
-	}
+	};
+
+	$scope.remove=function(id){
+		console.log(id);
+		$http.delete('/contactList/' + id).success(function(response){
+			refresh();
+		});
+	};
 
 
 }]);
